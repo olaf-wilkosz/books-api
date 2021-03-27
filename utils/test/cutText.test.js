@@ -20,7 +20,7 @@ describe('CutText', () => {
   it('should return an error if "maxLength" arg is not a number', () => {
     if (typeof maxLength !== 'number') return 'Error';
 
-    xpect(cutText('Lorem Ipsum', undefined)).to.equal('Error');
+    expect(cutText('Lorem Ipsum', undefined)).to.equal('Error');
     expect(cutText('Lorem Ipsum', 'abc')).to.equal('Error');
     expect(cutText('Lorem Ipsum', {})).to.equal('Error');
     expect(cutText('Lorem Ipsum', [])).to.equal('Error');
