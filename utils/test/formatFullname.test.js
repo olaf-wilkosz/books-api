@@ -20,7 +20,7 @@ describe('FormatFullname', () => {
   it('should return an error if format of received data is different than the pattern', () => {
     expect(formatFullname('John Doe Test')).to.equal('Error');
     expect(formatFullname('John')).to.equal('Error');
-    expect(formatFullname(' ')).to.equal(false);
+    expect(formatFullname(' ')).to.equal('Error');
   });
 
   it('should return correct casing no matter what is the case of letters received', () => {
