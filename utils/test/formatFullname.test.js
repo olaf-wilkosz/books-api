@@ -4,14 +4,13 @@ const expect = require('chai').expect;
 describe('FormatFullname', () => {
 
   it('should return an error if there is no argument provided', () => {
-    expect(formatFullname(null)).to.equal('Error');
     expect(formatFullname()).to.equal('Error');
-    expect(formatFullname('')).to.equal('Error');
-    // expect(formatFullname(' ')).to.equal('Error');
   });
 
   it('should return an error if "fullName" is not a string', () => {
     expect(formatFullname(undefined)).to.equal('Error');
+    expect(formatFullname(null)).to.equal('Error');
+    expect(formatFullname('')).to.equal('Error');
     expect(formatFullname({})).to.equal('Error');
     expect(formatFullname([])).to.equal('Error');
     expect(formatFullname(12)).to.equal('Error');
@@ -21,6 +20,7 @@ describe('FormatFullname', () => {
   it('should return an error if format of received data is different than the pattern', () => {
     expect(formatFullname('John Doe Test')).to.equal('Error');
     expect(formatFullname('John')).to.equal('Error');
+    expect(formatFullname(' ')).to.equal(false);
   });
 
   it('should return correct casing no matter what is the case of letters received', () => {
